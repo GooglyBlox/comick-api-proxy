@@ -618,7 +618,7 @@ const comics = await trending.json();`}
             This service provides a CORS-enabled interface to the Comick API.
             All requests are forwarded to{" "}
             <code className="text-zinc-900 dark:text-zinc-100">
-              api.comick.fun
+              api.comick.dev
             </code>
           </p>
         </footer>

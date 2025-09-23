@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const COMICK_API_BASE = "https://api.comick.fun";
+const COMICK_API_BASE = "https://api.comick.dev";
 
 async function proxyRequest(request: NextRequest, path: string[]) {
   try {

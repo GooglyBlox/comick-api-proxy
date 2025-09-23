@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const response = await fetch("https://api.comick.fun/category/", {
+    const response = await fetch("https://api.comick.dev/category/", {
       headers: {
         "User-Agent": "ComickProxy/1.0",
       },
