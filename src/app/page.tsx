@@ -147,19 +147,6 @@ const endpoints: EndpointProps[] = [
   },
   {
     method: "GET",
-    path: "/api/chapter/{hid}/get_images",
-    description: "Get chapter images by ID",
-    parameters: [
-      {
-        name: "hid",
-        type: "string",
-        required: true,
-        description: "Chapter hash ID",
-      },
-    ],
-  },
-  {
-    method: "GET",
     path: "/api/comic/{hid}/chapters",
     description: "Get chapters of a comic",
     parameters: [
@@ -173,7 +160,7 @@ const endpoints: EndpointProps[] = [
         name: "limit",
         type: "integer",
         required: false,
-        description: "Number of chapters to return (default: 60)",
+        description: "Number of chapters to return (default: 30)",
       },
       {
         name: "page",
@@ -223,6 +210,12 @@ const endpoints: EndpointProps[] = [
         type: "integer",
         required: false,
         description: "Timestamp parameter",
+      },
+      {
+        name: "lang",
+        type: "string",
+        required: false,
+        description: "Language code",
       },
       {
         name: "tachiyomi",
@@ -280,6 +273,13 @@ const endpoints: EndpointProps[] = [
         type: "string",
         required: false,
         description: "Search query (overrides other parameters)",
+      },
+      {
+        name: "type",
+        type: "string",
+        required: false,
+        description: "Search type",
+        enum: ["user", "author", "group", "comic"],
       },
       {
         name: "genres",
@@ -359,6 +359,12 @@ const endpoints: EndpointProps[] = [
         description: "Results per page (default: 15)",
       },
       {
+        name: "time",
+        type: "integer",
+        required: false,
+        description: "Subtract days (e.g., 120 = ~4 months)",
+      },
+      {
         name: "from",
         type: "integer",
         required: false,
@@ -376,6 +382,24 @@ const endpoints: EndpointProps[] = [
         type: "boolean",
         required: false,
         description: "Completed translation only",
+      },
+      {
+        name: "exclude-mylist",
+        type: "boolean",
+        required: false,
+        description: "Exclude user's list (requires authentication)",
+      },
+      {
+        name: "showall",
+        type: "boolean",
+        required: false,
+        description: "Include comics without chapters",
+      },
+      {
+        name: "t",
+        type: "boolean",
+        required: false,
+        description: "Include alt title for display",
       },
       {
         name: "tachiyomi",
