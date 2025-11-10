@@ -147,7 +147,7 @@ const endpoints: EndpointProps[] = [
   },
   {
     method: "GET",
-    path: "/api/comic/{hid}/chapters",
+    path: "/api/v1.0/comic/{hid}/chapters",
     description: "Get chapters of a comic",
     parameters: [
       {
@@ -160,13 +160,13 @@ const endpoints: EndpointProps[] = [
         name: "limit",
         type: "integer",
         required: false,
-        description: "Number of chapters to return (default: 30)",
+        description: "Number of chapters to return (default: 12)",
       },
       {
         name: "page",
         type: "integer",
         required: false,
-        description: "Page number",
+        description: "Page number (minimum: 0)",
       },
       {
         name: "chap-order",
